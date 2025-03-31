@@ -20,7 +20,7 @@ Este repositório contém a solução completa do Teste de Nivelamento, que envo
   - [Requisitos](#requisitos)
   - [Configuração e Execução](#configuração-e-execução)
 - [Como Contribuir](#como-contribuir)
-- [Licença](#licença)
+
 
 ---
 
