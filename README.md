@@ -28,6 +28,10 @@ Este repositório contém a solução completa do Teste de Nivelamento, que envo
 
 
 
+   
+
+
+
 
 ### Principais diretórios:
 
@@ -76,20 +80,28 @@ Este repositório contém a solução completa do Teste de Nivelamento, que envo
    - Scripts SQL para criar as tabelas necessárias (dados cadastrais das operadoras, demonstrações contábeis, etc.).  
    - Scripts para importar os arquivos CSV baixados do site de Dados Abertos da ANS.  
    - Queries analíticas para descobrir as 10 operadoras com maiores despesas em "EVENTOS/SINISTROS CONHECIDOS OU AVISADOS DE ASSISTÊNCIA A SAÚDE MEDICO HOSPITALAR" no último trimestre e no último ano.
+   - ![image](https://github.com/user-attachments/assets/8073af82-8d39-4cef-9617-41fe996e7cf9)
+
 
 4. **API Backend (FastAPI)**  
    - Fornece uma rota `/search` para buscar operadoras com base em um termo de busca (`Razao_Social`).  
    - Conecta-se ao banco de dados para retornar até todas as correspondências encontradas.  
    - Utiliza CORS para permitir requisições do frontend Vue.js.
+   - ![image](https://github.com/user-attachments/assets/0ed89303-1027-42dd-ba79-4d9f36eb4e01)
+
 
 5. **Frontend (Vue.js)**  
    - Interface simples de busca de operadoras.  
    - Um componente principal (`SearchComponent.vue`) faz requisições à rota `/search` da API.  
    - Exibe os resultados de forma amigável ao usuário.
+![image](https://github.com/user-attachments/assets/52b3796a-431f-4b48-b072-67335f722e93)
+
 
 6. **Coleção Postman**  
    - Arquivo `.postman_collection.json` com requisições configuradas para testar o endpoint `/search`.  
    - Inclui scripts de teste para validar status code e estrutura da resposta.
+![image](https://github.com/user-attachments/assets/78ec15fb-311a-4e38-9ed8-9c99ba0417ca)
+
 
 ---
 
