@@ -1,0 +1,11 @@
+# FastAPI: Framework para construir APIs modernas e rápidas em Python
+fastapi==0.95.0
+
+# Uvicorn: Servidor ASGI para rodar a aplicação FastAPI
+uvicorn==0.21.1
+
+# mysql-connector-python: Conector para conectar a aplicação Python com o MySQL
+mysql-connector-python==8.0.33
+
+# pydantic: Utilizado pelo FastAPI para validação de dados e definição de modelos
+pydantic==1.10.2

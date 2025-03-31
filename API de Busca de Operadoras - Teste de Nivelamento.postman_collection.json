@@ -1,0 +1,78 @@
+{
+	"info": {
+		"_postman_id": "1fca4b33-3982-4a9d-b5be-6c837b84b198",
+		"name": "API de Busca de Operadoras - Teste de Nivelamento",
+		"description": "Esta coleção Postman foi desenvolvida para testar os endpoints da API de Operadoras, implementada como parte do teste de nivelamento. Ela contém requisições configuradas para realizar buscas textuais nas operadoras, utilizando o método GET e o parâmetro de consulta \"q\".\n\nCada requisição inclui scripts de teste que verificam se:\n\n- O status da resposta é 200 (sucesso);\n    \n- O retorno está no formato JSON esperado e contém uma lista de operadoras.\n    \n\nAlém disso, a coleção foi configurada para permitir o uso de variáveis de ambiente, facilitando a alteração da URL base do servidor entre diferentes ambientes (desenvolvimento, homologação, produção).\n\nEsta coleção serve como ferramenta para validar e demonstrar o correto funcionamento da API, garantindo que os registros retornados correspondam aos critérios de busca implementados no backend.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43565235"
+	},
+	"item": [
+		{
+			"name": "Search_Operadoras",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var template = `\r",
+							"<style type=\"text/css\">\r",
+							"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+							"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+							"    .tftable tr {background-color:#ffffff;}\r",
+							"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+							"    .tftable tr:hover {background-color:#e0ffff;}\r",
+							"</style>\r",
+							"\r",
+							"<table class=\"tftable\" border=\"1\">\r",
+							"    <tr>\r",
+							"        <th>Registro ANS</th>\r",
+							"        <th>Razão Social</th>\r",
+							"        <th>CNPJ</th>\r",
+							"    </tr>\r",
+							"    \r",
+							"    {{#each response}}\r",
+							"        <tr>\r",
+							"            <td>{{Registro_ANS}}</td>\r",
+							"            <td>{{Razao_Social}}</td>\r",
+							"            <td>{{CNPJ}}</td>\r",
+							"        </tr>\r",
+							"    {{/each}}\r",
+							"</table>\r",
+							"`;\r",
+							"\r",
+							"function constructVisualizerPayload() {\r",
+							"    return {response: pm.response.json()}\r",
+							"}\r",
+							"\r",
+							"pm.visualizer.set(template, constructVisualizerPayload());"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/search\n?q=Operadora",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"search\n"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "Operadora"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
